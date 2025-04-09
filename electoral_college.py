@@ -1,10 +1,19 @@
 from argparse import ArgumentParser
 import sys
 
-# Replace this comment with your implementation of get_winner().
+def get_winner(electors, outcomes):
+    
+    republican_votes = 0
+    democrat_votes = 0
+    
+    for state, party in outcomes.items:
+        if state in electors:
+            if party == "R":
+                republican_votes += electors[state]
+            
+                
 
-def get_winner(electors, hypothetical): 
-    for r in electors.items():
+
         
         
 
