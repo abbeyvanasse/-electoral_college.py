@@ -1,20 +1,28 @@
 from argparse import ArgumentParser
 import sys
 
-def get_winner(electors, outcomes):
+# Replace this comment with your implementation of get_winner().
+
+def get_winner(electors, outcomes): 
     
+    democratic_votes = 0
     republican_votes = 0
-    democrat_votes = 0
     
     for state, party in outcomes.items:
         if state in electors:
             if party == "R":
                 republican_votes += electors[state]
-            
+            elif party == "D":
+                democratic_votes += electors[state]
                 
+    if republican_votes > democratic_votes:
+        winner = "R"
+        votes = republican_votes
+    else: 
+        winner = "D"
+        votes = democratic_votes
 
-
-        
+    return f"{winner} would win with {votes} electoral votes."
         
 
 def to_dict(filename, value_type=str):
